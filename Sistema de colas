@@ -31,3 +31,17 @@ public class SistemasDeColas {
    System.out.println("Numero promedio de clientes en el sistema: "+Ls);
    Lq=((lamnda_div)*(lamnda_div))/(Miu_div*(Miu_div-lamnda_div));
    System.out.println("Numero promedio de clientes en la cola: "+Lq);
+   p0=1-p;
+   System.out.println("Probabilidada de que no halla clientes en la cola es: "+p0);
+   System.out.println("-------------------------------------");
+   System.out.println("Que probabilidad hay de que halla cierto numero de clientes en el sistema");
+   System.out.println("Ingrese el numero de usuarios de la probabilidad");
+   n=lector.nextDouble();
+   probabilidadUsuarios=(1-p)*Math.pow(p,n);
+   porcentajeUsuarios=probabilidadUsuarios*100;
+   System.out.println("La probabilidad de que halla "+n+" usuarios en el sistema es de: " + porcentajeUsuarios +"%");
+   }catch (Exception e){
+     System.out.println("Dato incorrecto");
+   }
+     }
+}
