@@ -1,1 +1,33 @@
+package SistemasDeColas;
 
+import java.util.Scanner;
+public class SistemasDeColas {
+
+  public static void main(String[] args) {
+   Scanner lector = new Scanner(System.in);
+   try {
+   double lamnda, Miu, lamnda_div, Miu_div, Wq, Ws, p, Ls, Lq, p0,n, probabilidadUsuarios, porcentajeUsuarios;
+   
+   System.out.println("Sistema de Colas");
+   System.out.println("----------------");
+   System.out.println("Ingresar la media de llegada de pasajeros por hora");
+   lamnda=lector.nextDouble();
+   lamnda_div=lamnda/60;
+   System.out.println("Ingrese la capacidad de atencion a pasajeros por hora");
+   Miu=lector.nextDouble();
+   Miu_div=Miu/60;
+   System.out.println("La media de llegada de pasajeros es: "+lamnda_div);
+   System.out.println("La Capacidad de atencion de pasajeros por hora es de: "+ Miu_div);
+   p=lamnda_div/Miu_div;
+   System.out.println("La probabilidad de que el sistema este ocupado: "+p);
+   if(Miu_div>lamnda_div){
+     System.out.println("Tiempo de espera de clientes en la cola es de: "+Miu_div);
+   }else{
+     Wq = (lamnda_div/Miu_div*(Miu_div-lamnda_div));
+   }
+   Ws=1/(Miu_div-lamnda_div);
+   System.out.println("Tiempo de espera de un cliente en el sistema:" +Ws );
+   Ls= p/(1-p);
+   System.out.println("Numero promedio de clientes en el sistema: "+Ls);
+   Lq=((lamnda_div)*(lamnda_div))/(Miu_div*(Miu_div-lamnda_div));
+   System.out.println("Numero promedio de clientes en la cola: "+Lq);
